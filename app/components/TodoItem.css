@@ -1,0 +1,28 @@
+.todoitem {
+	margin: 20px;
+}
+
+.todo-enter {
+	opacity: 0;
+	transition: all 300ms ease-in;
+}
+
+.todo-enter.todo-enter-active {
+	opacity: 1;
+}
+
+.todo-leave {
+	transition: all 300ms ease-in;
+}
+
+.todo-leave.todo-leave-active {
+	opacity: 0;
+}
+
+.todoitem .delete-btn {
+    margin-left: 20px;
+    background: #ccc;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+}
