@@ -80,7 +80,7 @@ export default class SwipeCtrl extends React.Component {
 			transitionDuration : this.state.transitionDuration + 'ms'
 		};
 		return (
-				<div style={tranformStyle} onTouchStart={this.handleTouchStart.bind(this)} 
+				<div style={tranformStyle} className={this.props.classes} onTouchStart={this.handleTouchStart.bind(this)} 
 					onTouchMove={this.handleTouchMove.bind(this)} 
 					onTouchEnd={this.handleTouchEnd.bind(this)} 
 					onTouchCancel={this.handleTouchCancel.bind(this)} 
