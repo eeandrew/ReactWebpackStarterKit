@@ -1,5 +1,6 @@
 import React from 'react';
 import './SwipeCtrl.css';
+import EventHandlers from './mixins/event-handlers.jsx';
 
 export default class SwipeCtrl extends React.Component {
 	constructor() {
@@ -8,6 +9,7 @@ export default class SwipeCtrl extends React.Component {
 			translateX:0,
 			initX:0,
 			transitionDuration:0,
+			touchObject:{},
 		};
 
 		this.TRANSITION_DURATION = 150;
@@ -21,6 +23,7 @@ export default class SwipeCtrl extends React.Component {
 
 		this.startX = this.x;
 		this.pointX = point.pageX;
+		EventHandlers.swipeStart.bind(this)(e);
 	}
 
 	handleTouchMove(e) {
@@ -31,6 +34,8 @@ export default class SwipeCtrl extends React.Component {
 		this.pointX = point.pageX;
 
 		newX = this.x + deltaX;
+
+		console.log(point)
 
 		if(Math.abs(newX) > this.props.maxSwipe) {
 			newX = this.x + deltaX / 3;
@@ -85,6 +90,7 @@ export default class SwipeCtrl extends React.Component {
 					onTouchEnd={this.handleTouchEnd.bind(this)} 
 					onTouchCancel={this.handleTouchCancel.bind(this)} 
 					className="slide-handle">
+					{this.state.touchObject.curX}
 					{this.props.children}
 				</div>
 		);
