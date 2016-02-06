@@ -22,10 +22,9 @@ class App extends React.Component {
 			float:'left',
 		};
 		return (
-				<Carousel> 
-					<div style={carouselItem}>test1</div>
-					<div style={carouselItem}>test2</div>
-				</Carousel>
+				<SwipeCtrl maxSwipe={200} >
+					滑动
+				</SwipeCtrl>
 			);
 	}
 }
