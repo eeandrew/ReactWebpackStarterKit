@@ -25,13 +25,14 @@ export default class AutoSize extends React.Component {
 			width:'100%',
 			outline:'none',
 			fontSize:'16px',
-			color:'#666'
+			color:'#666',
+			padding:'5px 10px',
 		};
 
-		return <textarea className={this.props.autoSizeStyle} style={this.props.autoSizeStyle ? null : style} onChange={this.handleInput.bind(this)}>{this.props.children}</textarea>
+		return <textarea rows={1} className={this.props.autoSizeStyle} style={this.props.autoSizeStyle ? null : style} onChange={this.handleInput.bind(this)}>{this.props.children}</textarea>
 	}
 }
 
 AutoSize.propTypes = {
-	autoSizeStyle : React.PropTypes.sting
+	autoSizeStyle : React.PropTypes.string
 }
