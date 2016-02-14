@@ -7,13 +7,14 @@ export default class SimpleRemove extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			show : true
+			show : true,
+			enter : true
 		};
 	}
 
-	toggle() {
+	toggle(type) {
 		this.setState({
-			show : !this.state.show
+			[type] : !this.state[type]
 		});
 	}
 
@@ -23,11 +24,17 @@ export default class SimpleRemove extends React.Component {
 			height:200,
 			background:'red'
 		};
+		let enterTxt = this.state.enter? 'YES' :'NO';
 		return (
 			<div>
-				<button onClick={this.toggle.bind(this)}>Toggle</button>
-				<Animation component="" transitionName="fade">
+				<button onClick={this.toggle.bind(this,'show')}>Toggle</button>
+
+				<Animation exclusive={true}  component="" transitionName="fade" transitionAppear>
 					{this.state.show? <div style={style}/> :null}
+				</Animation>
+
+				<Animation exclusive={true} transitionName="fade" transitionLeave={false}>
+					<button key={enterTxt} onClick={this.toggle.bind(this,'enter')}>{enterTxt}</button>
 				</Animation>
 			</div>
 		);

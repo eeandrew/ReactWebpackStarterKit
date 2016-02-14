@@ -7,6 +7,15 @@
 	opacity: 1;
 }
 
+.fade-appear{
+	opacity: 0;
+	transition: all 1s;
+}
+
+.fade-appear.fade-appear-active {
+	opacity: 1;
+}
+
 .fade-leave {
 	opacity: 1;
 	transition: all 1s;
