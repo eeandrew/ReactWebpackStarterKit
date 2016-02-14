@@ -7,6 +7,7 @@ import Counter from './components/Counter.jsx';
 import Todo from './components/Todo.jsx';
 import SwipeCtrl from './components/SwipeCtrl.jsx';
 import Carousel from './components/carousel/Carousel.jsx';
+import Alert from './components/Alert.jsx';
 
 class App extends React.Component {
 	constructor() {
@@ -30,7 +31,10 @@ class App extends React.Component {
 }
 
 function main() {
-	ReactDom.render(<App />,document.getElementById('app'));
+	const alertStr = {
+		str : 'hello world'
+	};
+	ReactDom.render(<Alert {...alertStr}/>,document.getElementById('app'));
 }
 
 main();
