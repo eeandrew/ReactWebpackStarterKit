@@ -8,6 +8,7 @@ import Todo from './components/Todo.jsx';
 import SwipeCtrl from './components/SwipeCtrl.jsx';
 import Carousel from './components/carousel/Carousel.jsx';
 import Alert from './components/Alert.jsx';
+import SimpleRemove from './components/SimpleRemove.jsx';
 
 class App extends React.Component {
 	constructor() {
@@ -34,7 +35,7 @@ function main() {
 	const alertStr = {
 		str : 'hello world'
 	};
-	ReactDom.render(<Alert {...alertStr}/>,document.getElementById('app'));
+	ReactDom.render(<SimpleRemove />,document.getElementById('app'));
 }
 
 main();
